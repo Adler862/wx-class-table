@@ -1,0 +1,8 @@
+node_modules/
+miniprogram_npm/
+project.private.config.json
+utils/xlsx.full.min.js
+.DS_Store
+*.log
+__pycache__/
+*.pyc

@@ -1,0 +1,104 @@
+<!-- pages/edit/edit.wxml - 添加/编辑课程页 -->
+<view class="container">
+
+  <view class="page-header">
+    <text class="page-title">{{title}}</text>
+    <text class="page-desc" wx:if="{{!isEdit}}">必填课程名称，其余可选</text>
+  </view>
+
+  <view class="form-card">
+
+    <!-- 课程名 -->
+    <view class="form-group required">
+      <text class="form-label">课程名称</text>
+      <input class="form-input" placeholder="如：高等数学" value="{{form.name}}" bindinput="onNameInput" maxlength="30"/>
+    </view>
+
+    <!-- 备注 -->
+    <view class="form-group">
+      <text class="form-label">备注（可选）</text>
+      <input class="form-input" placeholder="如：分组01、实验课" value="{{form.note}}" bindinput="onNoteInput" maxlength="20"/>
+    </view>
+
+    <!-- 教师 -->
+    <view class="form-group">
+      <text class="form-label">授课教师</text>
+      <input class="form-input" placeholder="如：张教授" value="{{form.teacher}}" bindinput="onTeacherInput" maxlength="20"/>
+    </view>
+
+    <!-- 地点 -->
+    <view class="form-group">
+      <text class="form-label">上课地点</text>
+      <input class="form-input" placeholder="如：教学楼 A101" value="{{form.location}}" bindinput="onLocationInput" maxlength="30"/>
+    </view>
+
+    <!-- 分隔 -->
+    <view class="form-divider"><text class="divider-text">时间设置</text></view>
+
+    <!-- 星期 -->
+    <view class="form-group">
+      <text class="form-label">星期</text>
+      <picker mode="selector" range="{{dayArray}}" value="{{dayIndex}}" bindchange="onDayChange">
+        <view class="form-picker">
+          <text>{{dayArray[dayIndex]}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 大节选择 -->
+    <view class="form-group">
+      <text class="form-label">上课节次</text>
+      <picker mode="selector" range="{{sectionArray}}" value="{{sectionIndex}}" bindchange="onSectionChange">
+        <view class="form-picker">
+          <text>{{sectionArray[sectionIndex]}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 分隔 -->
+    <view class="form-divider"><text class="divider-text">周次设置</text></view>
+
+    <!-- 起始周 + 总周数 -->
+    <view class="form-row">
+      <view class="form-group half-group">
+        <text class="form-label">起始周</text>
+        <input class="form-input center" type="number" placeholder="1" value="{{form.startWeek}}" bindinput="onStartWeekInput"/>
+      </view>
+      <view class="form-group half-group">
+        <text class="form-label">总周数</text>
+        <input class="form-input center" type="number" placeholder="16" value="{{form.totalWeeks}}" bindinput="onTotalWeeksInput"/>
+      </view>
+    </view>
+
+    <!-- 单双周 -->
+    <view class="form-group">
+      <text class="form-label">单双周</text>
+      <picker mode="selector" range="{{weekTypeArray}}" value="{{weekTypeIndex}}" bindchange="onWeekTypeChange">
+        <view class="form-picker">
+          <text>{{weekTypeArray[weekTypeIndex]}}</text>
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 手动输入周数 -->
+    <view class="form-group">
+      <text class="form-label">手动选周（可选）</text>
+      <input class="form-input" placeholder="如：1,3,5,7-9,11-16" value="{{form.weeks}}" bindinput="onWeeksInput"/>
+      <text class="form-hint">填写后将覆盖起始周和单双周设置。支持格式：1,3,5-8,10</text>
+    </view>
+
+  </view>
+
+  <!-- 按钮组 -->
+  <view class="btn-group">
+    <button class="submit-btn" bindtap="onSubmit">
+      {{isEdit ? '保存修改' : '添加课程'}}
+    </button>
+    <button class="preview-btn" bindtap="onPreview">预览课程</button>
+    <button class="demo-btn" bindtap="onQuickDemo" wx:if="{{!isEdit}}">快速填充示例</button>
+  </view>
+
+</view>

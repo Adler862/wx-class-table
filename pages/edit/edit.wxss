@@ -1,0 +1,203 @@
+/* pages/edit/edit.wxss */
+
+.container {
+  padding: 24rpx;
+  padding-bottom: 120rpx;
+}
+
+/* ========== 页头 ========== */
+.page-header {
+  margin-bottom: 32rpx;
+}
+
+.page-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #7f8c8d;
+  display: block;
+}
+
+.page-desc {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 8rpx;
+  display: block;
+}
+
+/* ========== 表单卡片 ========== */
+.form-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+}
+
+.form-group {
+  margin-bottom: 28rpx;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group.required .form-label::after {
+  content: ' *';
+  color: #e53935;
+}
+
+.form-label {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+  display: block;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  height: 80rpx;
+  padding: 0 24rpx;
+  border: 2rpx solid #e8e8e8;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #333;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #7f8c8d;
+  background: #fff;
+}
+
+.form-input.center {
+  text-align: center;
+}
+
+.form-hint {
+  font-size: 22rpx;
+  color: #bbb;
+  margin-top: 8rpx;
+  display: block;
+}
+
+/* ========== 选择器 ========== */
+.form-picker {
+  width: 100%;
+  height: 80rpx;
+  padding: 0 24rpx;
+  border: 2rpx solid #e8e8e8;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #333;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.form-picker.half {
+  width: 100%;
+}
+
+.picker-arrow {
+  font-size: 20rpx;
+  color: #bbb;
+}
+
+/* ========== 行内布局 ========== */
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 28rpx;
+}
+
+.half-picker {
+  flex: 1;
+}
+
+.half-group {
+  flex: 1;
+}
+
+.form-sep {
+  font-size: 26rpx;
+  color: #999;
+  flex-shrink: 0;
+}
+
+/* ========== 分隔线 ========== */
+.form-divider {
+  display: flex;
+  align-items: center;
+  margin: 16rpx 0 24rpx;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1rpx;
+  background: #f0f0f0;
+}
+
+.divider-text {
+  font-size: 24rpx;
+  color: #7f8c8d;
+  padding: 0 20rpx;
+  font-weight: 500;
+}
+
+/* ========== 按钮组 ========== */
+.btn-group {
+  margin-top: 48rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7f8c8d;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  border-radius: 16rpx;
+  border: none;
+}
+
+.submit-btn:active {
+  background: #5a6566;
+}
+
+.preview-btn {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #7f8c8d;
+  font-size: 28rpx;
+  font-weight: 500;
+  border-radius: 16rpx;
+  border: 2rpx solid #7f8c8d;
+}
+
+.demo-btn {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #999;
+  font-size: 26rpx;
+  border: none;
+}
